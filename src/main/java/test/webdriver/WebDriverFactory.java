@@ -159,6 +159,11 @@ public class WebDriverFactory {
 			}
 
 			webDriver = new FirefoxDriver(ffProfile);
+			//webDriver = new RemoteWebDriver(new URL("http://www.google.com"),DesiredCapabilities.firefox());
+
+			//DesiredCapabilities dc = DesiredCapabilities.firefox();
+			//dc.setCapability(FirefoxDriver.PROFILE, ffProfile);
+			//webDriver = new RemoteWebDriver(dc);
 
 		} else if (INTERNET_EXPLORER.equals(browser)) {
 			webDriver = new InternetExplorerDriver();

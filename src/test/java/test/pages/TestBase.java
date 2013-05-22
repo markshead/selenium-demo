@@ -62,24 +62,25 @@ public class TestBase {
 		}
 	}
 
-//	@AfterMethod
-//	public void setScreenshot(ITestResult result) {
-//		if (!result.isSuccess()) {
-//			try {
-//				WebDriver returned = new Augmenter().augment(webDriver);
-//				if (returned != null) {
-//					File f = ((TakesScreenshot) returned)
-//							.getScreenshotAs(OutputType.FILE);
-//					try {
-//						FileUtils.copyFile(f, new File(SCREENSHOT_FOLDER
-//								+ result.getName() + SCREENSHOT_FORMAT));
-//					} catch (IOException e) {
-//						e.printStackTrace();
-//					}
-//				}
-//			} catch (ScreenshotException se) {
-//				se.printStackTrace();
-//			}
-//		}
-//	}
+	//@AfterMethod
+	public void setScreenshot(ITestResult result) {
+
+			try {
+				WebDriver returned = new Augmenter().augment(webDriver);
+				if (returned != null) {
+					File f = ((TakesScreenshot) returned)
+							.getScreenshotAs(OutputType.FILE);
+					try {
+						//FileUtils.copyFile(f, new File(SCREENSHOT_FOLDER
+						//		+ result.getName() + SCREENSHOT_FORMAT));
+						if(false) throw new IOException();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
+			} catch (ScreenshotException se) {
+				se.printStackTrace();
+			}
+		
+	}
 }
